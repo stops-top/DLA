@@ -30,15 +30,14 @@ jobs:
           sudo apt install -y git make autoconf automake sdcc
           chmod +x ./autogen.sh
           sudo bash ./autogen.sh
-
+          sudo bash ./configure
 
       - name: build
         if: success()
         run: |
-          sudo bash ./configure
           make
 
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: sboot_${{ matrix.os }}
-      #     path: build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: DAP
+          path: build
