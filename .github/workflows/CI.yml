@@ -39,5 +39,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: DAP
-          path: build
+          name: DAP_hw
+          path: hw
