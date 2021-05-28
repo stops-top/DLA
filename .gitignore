@@ -6,12 +6,12 @@
 /autostuff/
 /configure
 /configure.lineno
-README
-NEWS
-HACKING
-COPYING*
-ChangeLog
-AUTHORS
+# README
+# NEWS
+# HACKING
+# COPYING*
+# ChangeLog
+# AUTHORS
 # Editor/IDE cruft
 *.kate-swp
 *~
