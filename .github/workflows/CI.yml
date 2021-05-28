@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ubuntu-latest
+    steps:
+      # - name: make-action
+      #   uses: Qful/make-action@master
+      #   with:
+      #     release: 10-2020-q4
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 1
+
+      - name: install
+        run: |
+          sudo apt udpate -y
+          sudo apt install -y git make autoconf automake sdcc
+          chmod +x ./autogen.sh
+          sudo bash ./configure
+          make
+
+
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: sboot_${{ matrix.os }}
+      #     path: build
