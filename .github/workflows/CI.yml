@@ -26,7 +26,7 @@ jobs:
 
       - name: install
         run: |
-          sudo apt udpate -y
+          sudo apt update -y
           sudo apt install -y git make autoconf automake sdcc
           chmod +x ./autogen.sh
           sudo bash ./configure
